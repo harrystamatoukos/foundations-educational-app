@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Electronics Workbench</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;700&family=Space+Grotesk:wght@600&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'media',
+        theme: {
+          extend: {
+            colors: {
+              canvas: 'var(--color-canvas)',
+              surface: 'var(--color-surface)',
+              depth: 'var(--color-depth)',
+              border: 'var(--color-border)',
+              
+              primary: 'var(--color-text-primary)',
+              secondary: 'var(--color-text-secondary)',
+              tertiary: 'var(--color-text-tertiary)',
+              inverse: 'var(--color-text-inverse)',
+              
+              active: 'var(--color-active)',
+              success: 'var(--color-success)',
+              warning: 'var(--color-warning)',
+              error: 'var(--color-error)',
+              
+              info: 'var(--color-information)',
+              op: 'var(--color-operation)',
+              mem: 'var(--color-memory)',
+              flow: 'var(--color-flow)',
+            },
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+              mono: ['JetBrains Mono', 'monospace'],
+              display: ['Space Grotesk', 'sans-serif'],
+            },
+            boxShadow: {
+              'card': '0 1px 2px rgba(0,0,0,0.05), 0 4px 12px rgba(0,0,0,0.02)',
+              'elevation': '0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03)',
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      :root {
+        /* Colors - Light Mode (Humanistic & Calm) */
+        --color-canvas: #FDFCF8; /* Warm, paper-like off-white */
+        --color-surface: #FFFFFF;
+        --color-depth: #F4F3EF;  /* Subtle warm grey */
+        --color-border: #E4E2DC; /* Soft border */
+        
+        --color-text-primary: #333331; /* Soft Black */
+        --color-text-secondary: #666663;
+        --color-text-tertiary: #999996;
+        --color-text-inverse: #FFFFFF;
+        
+        /* Semantic - Desaturated for calm feel */
+        --color-active: #3B82F6;
+        --color-success: #059669;
+        --color-warning: #D97706;
+        --color-error: #DC2626;
+        
+        --color-information: #3B82F6;
+        --color-operation: #F59E0B;
+        --color-memory: #8B5CF6;
+        --color-flow: #06B6D4;
+
+        /* Animation */
+        --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+        --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+        --ease-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
+      }
+
+      /* Dark Mode (Refined Zinc) */
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --color-canvas: #09090B;
+          --color-surface: #18181B;
+          --color-depth: #27272A;
+          --color-border: #27272A;
+          
+          --color-text-primary: #F4F4F5;
+          --color-text-secondary: #A1A1AA;
+          --color-text-tertiary: #52525B;
+          --color-text-inverse: #09090B;
+          
+          --color-active: #3B82F6;
+          --color-success: #10B981;
+          --color-warning: #F59E0B;
+          --color-error: #EF4444;
+        }
+      }
+
+      body {
+        margin: 0;
+        overflow-x: hidden;
+        background-color: var(--color-canvas);
+        color: var(--color-text-primary);
+        font-family: 'Inter', sans-serif;
+        line-height: 1.6;
+      }
+      
+      /* Utilities */
+      .bg-dot-grid {
+        background-image: radial-gradient(var(--color-text-tertiary) 1px, transparent 1px);
+        background-size: 24px 24px;
+        opacity: 0.15;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react/": "https://esm.sh/react@^19.2.3/"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
